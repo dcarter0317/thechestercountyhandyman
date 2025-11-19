@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#0a0a0a" id="themeColorMeta" />
+  <title>The Chester County Handyman | Reliable & Affordable Home Improvement (30+ Years)</title>
+  <meta name="description" content="The Chester County Handyman — Reliable & affordable general home improvement contractor serving Chester County for 30+ years. Kitchens, baths, home repair" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/script.js"></script>
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container nav">
+       <a href="#home" class="logo" aria-label="The Chester County Handyman - Home">
+         <img class="site-logo" src="././assets/imgs/the_chester_county_handman_logo_1024x768.png" alt="The Chester County Handyman logo">
+       </a>
+
+      <nav class="desktop" aria-label="Primary">
+        <ul>
+
+          <li><a href="/">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact" class="cta-btn">Get a Quote</a></li>
+          <li><a class="cta-btn" href="tel:1(484)340-6202">Call (484)340-6202</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark">🌙</button>
+
+      <div class="mobile-nav">
+        <button class="mobile-toggle" id="openDrawer" aria-controls="drawer" aria-expanded="false" aria-label="Open menu">☰ Menu</button>
+        <div class="drawer" id="drawer" hidden>
+          <div class="drawer-panel">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem">
+              <strong>Menu</strong>
+              <div style="display:flex; gap:.5rem; align-items:center">
+                <button class="theme-btn" id="themeToggleMobile" aria-label="Toggle theme">🌙</button>
+                <button class="close-btn" id="closeDrawer" aria-label="Close menu">Close ✕</button>
+              </div>
+            </div>
+            <a href="#services" data-close>Services</a>
+            <a href="#gallery" data-close>Gallery</a>
+            <a href="#about" data-close>About</a>
+            <a href="#contact" class="cta-btn" style="display:inline-block; margin-top:.5rem" data-close>Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <main id="home" class="hero container">
+    <div class="hero-grid">
+      <section>
+        <span class="eyebrow">Reliable & Affordable • 30+ Years</span>
+        <h1>General Home Improvement, Done Right.</h1>
+        <p>
+          From kitchen and bath remodels to decks, painting, and siding, <strong>The Chester County Handyman</strong> delivers top‑quality workmanship at fair prices. We show up, we communicate, and we finish proud.
+        </p>
+        <div class="badges" aria-hidden="true">
+          <span class="badge">Licensed & Insured</span>
+          <span class="badge">On‑Time & On‑Budget</span>
+          <span class="badge">Local • Family‑Owned</span>
+        </div>
+      </section>
+
+      <aside class="card contact-card" id="contact">
+        <h2 style="margin:0 0 .5rem">Request a Free Quote</h2>
+        <p class="help" style="margin:0 0 .8rem">Tell us about your project — we typically reply within one business day.</p>
+        <!--
+          Form handling via FormSubmit.co — no backend required.
+          On production, replace _next URL if hosting at a different path.
+        -->
+        <form id="quoteForm" action="https://formsubmit.co/moserpeter6@gmail.com" method="POST" target="_top" accept-charset="UTF-8" novalidate>
+          <input type="hidden" name="_subject" value="New Quote Request – Chester County Handyman">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" id="nextField" value="">
+          <!-- honeypot -->
+          <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off">
+
+          <div class="row">
+            <div class="field">
+              <label for="name">Your Name</label>
+              <input id="name" name="name" type="text" placeholder="Jane Doe" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="phone">Phone <span class="help">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" placeholder="(610) 555‑1234" pattern="^[0-9()\-.\s+]{7,}$">
+            </div>
+            <div class="field">
+              <label for="service">Service</label>
+              <input list="serviceList" id="service" name="service" placeholder="Select or type…">
+              <datalist id="serviceList">
+                <option>Kitchen Remodeling</option>
+                <option>Bathroom Remodeling</option>
+                <option>Home Repairs</option>
+                <option>Epoxy Work</option>
+              </datalist>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message" placeholder="Tell us about the space, timeline, and goals…" required></textarea>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" required>
+            <span>I agree to be contacted about my request and understand that my information will not be shared.</span>
+          </label>
+
+          <div class="submit-row">
+            <button class="cta-btn" type="submit">Send Request</button>
+            <small>
+              Or email us: <a href="mailto:moserpeter6@gmail.com">moserpeter6@gmail.com</a>
+            </small>
+          </div>
+        </form>
+      </aside>
+    </div>
+  </main>
+      
+  <section id="services" class="container">
+    <div class="section-head">
+      <h2>Featured Services & Recent Projects</h2>
+      <p>Tap a card to view photos.</p>
+    </div>
+
+    <div class="grid" role="list" aria-label="Services grid">
+      <!-- Cards are anchors for accessibility; JS attaches gallery data --> 
+        <div class="thumb"> <img alt="Home Repairs" src="./assets/imgs/home-repairs/repair6.jpg"></div>
+        <span class="label">Home Repairs</span>
+      </a>
+      <a class="service" href="#gallery" data-gallery="Epoxy Work" role="listitem">
+        <div class="thumb"> <img alt="Epoxy Work" src="./assets/imgs/epoxy-work/epoxy1.jpg++   "></div>
+        <span class="label">Epoxy Work</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== Gallery Modal ===== -->
+  <dialog id="galleryModal" class="gallery" aria-label="Photo gallery">
+    <div class="gallery-head">
+      <strong id="galleryTitle">Gallery</strong>
+      <button class="close-btn" id="closeGallery" aria-label="Close gallery">Close ✕</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid" aria-live="polite"></div>
+  </dialog>
+
+
+  <!-- ===== Image Lightbox ===== -->
+  <div id="imageModal" class="lightbox" role="dialog" aria-labelledby="lightboxTitle" aria-hidden="true" hidden>
+    <div class="lightbox-content">
+      <div class="lightbox-head">
+        <strong id="lightboxTitle">Project photo</strong>
+        <button class="close-btn" id="closeImageModal" aria-label="Close photo viewer">Close</button>
+      </div>
+      <div class="lightbox-frame">
+        <button class="lightbox-nav prev" type="button" data-dir="-1" aria-label="Previous photo"><span aria-hidden="true">&lsaquo;</span></button>
+        <img id="lightboxImage" alt="">
+        <button class="lightbox-nav next" type="button" data-dir="1" aria-label="Next photo"><span aria-hidden="true">&rsaquo;</span></button>
+      </div>
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="container">
+    <div class="section-head">
+      <h2>About The Chester County Handyman</h2>
+      <p>Trusted by homeowners for more than three decades.</p>
+    </div>
+    <p style="color:var(--muted); max-width:70ch">
+      For over 30 years, we’ve served Chester County with dependable, affordable home improvement and repair services. We take pride in craftsmanship, clear communication. Big or small, we’re here to help you plan, build, and enjoy your space.
+    </p>
+    <div class="stats">
+      <div class="stat"><strong style="font-size:1.6rem; color:var(--brand)">30+</strong><div>Years in Business</div></div>
+      <div class="stat"><strong style="font-size:1.6rem; color:var(--brand)">1,200+</strong><div>Projects Completed</div></div>
+      <div class="stat"><strong style="font-size:1.6rem; color:var(--brand)">4.9★</strong><div>Average Satisfaction</div></div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="brand-col">
+        <div class="site-logo--footer" aria-label="The Chester County Handyman">
+          
+          <span>The Chester County Handyman</span>
+        </div>
+        <p>Reliable • Affordable • Quality Craftsmanship</p>
+        <p class="credits">© <span id="year"></span> The Chester County Handyman. All rights reserved.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <strong style="display:block; margin-bottom:.4rem">Company</strong>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div>
+        <strong style="display:block; margin-bottom:.4rem">Contact</strong>
+        <a href="tel:1(484)340-6202">(484)340-6202</a>
+        <a href="mailto:moserpeter6@gmail.com">moserpeter6@gmail.com</a>
+        <p style="margin:.4rem 0 0; color:#a5a5a5">Chester County, PA • Mon–Fri</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
