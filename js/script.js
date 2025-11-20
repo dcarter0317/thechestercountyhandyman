@@ -254,6 +254,9 @@ setupGallery();
       // ===== Theme (light/dark)
     const root = document.documentElement;
     const themeMeta = document.getElementById('themeColorMeta');
+    const headerLogo = document.querySelector('.site-logo');
+    const LIGHT_LOGO = './assets/imgs/the_chester_county_handman_logo_1024x768.png';
+    const DARK_LOGO = './assets/imgs/the_chester_county_handman_logo_light_1024x768.png';
     const getSystemPref = () => (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
     const savedTheme = localStorage.getItem('cch_theme');
     const setTheme = (t) => {
@@ -265,6 +268,8 @@ setupGallery();
       const btn2 = document.getElementById('themeToggleMobile');
       if(btn1) btn1.textContent = icon;
       if(btn2) btn2.textContent = icon;
+      // Swap logo for contrast in dark mode
+      if(headerLogo) headerLogo.src = theme === 'dark' ? DARK_LOGO : LIGHT_LOGO;
       // Update meta theme-color for mobile UI chrome
       if(themeMeta) themeMeta.setAttribute('content', theme === 'light' ? '#ffffff' : '#0a0a0a');
     };
